@@ -1,0 +1,16 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Virtuella miljöer
+venv/
+
+# MacOS systemfiler
+.DS_Store
+
+# Lokala uploads/outputs (ska inte upp på GitHub)
+uploads/
+outputs/
+
+# Hemliga filer
+.env
