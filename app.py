@@ -16,9 +16,11 @@ except Exception:
 from openai import OpenAI
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
-# Video
+# --- FIX: Importera moviepy på ett sätt som fungerar överallt ---
+import moviepy.editor as mp
 from moviepy.editor import VideoFileClip
 
+# Init Flask
 app = Flask(__name__)
 
 # Mappar
@@ -152,7 +154,7 @@ def clip_video():
                 out_path = os.path.join(OUTPUT_DIR, f"{uuid.uuid4().hex}_{secure_filename(name)}")
 
                 sub = base.subclip(start, end)
-                # Standard 16:9 output. (Vill du ha 9:16, lägger vi in crop/resize senare.)
+                # Standard 16:9 output
                 sub.write_videofile(out_path, codec="libx264", audio_codec="aac", threads=2, logger=None)
                 out_files.append(os.path.basename(out_path))
 
