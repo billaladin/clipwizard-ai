@@ -1,3 +1,4 @@
+# Requirements for Clipwizard
 flask
 gunicorn
 openai>=1.0.0
