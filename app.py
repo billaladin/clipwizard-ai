@@ -1,7 +1,7 @@
 import os
 from flask import Flask, request, jsonify, send_file
 from werkzeug.utils import secure_filename
-from moviepy.editor import VideoFileClip
+from moviepy.video.io.VideoFileClip import VideoFileClip
 import openai
 from dotenv import load_dotenv
 
